@@ -3,7 +3,7 @@ import 'package:quiz/pages/welcome.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: WelcomeScreen(),
     ),
   );
