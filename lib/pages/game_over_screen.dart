@@ -1,9 +1,10 @@
+//Create a gameOver page
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quiz/pages/game_screen.dart';
+import 'package:quiz/pages/welcome.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class GameOver extends StatelessWidget {
+  const GameOver({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +13,10 @@ class WelcomeScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           color: Color(0xFFFFA600),
-          image: DecorationImage(
-            image: AssetImage('assets/images/welcome.jpg'),
-            // fit: BoxFit.cover,
-          ),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/images/welcome.jpg'),
+          //   // fit: BoxFit.cover,
+          // ),
         ),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -24,7 +25,16 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                "Welcome to \n Quiz App",
+                "Game Over",
+                style: GoogleFonts.fredokaOne(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              //you win
+              Text(
+                "You Win",
                 style: GoogleFonts.fredokaOne(
                   color: Colors.white,
                   fontSize: 40.0,
@@ -42,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MainGameScreen(),
+                        builder: (context) => const WelcomeScreen(),
                       ),
                     );
                   },
@@ -56,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: const Padding(
                     padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
                     child: Text(
-                      "Start Playing",
+                      "Play Again",
                       style: TextStyle(
                         color: Color(0xFFFFA600),
                         fontSize: 20.0,
